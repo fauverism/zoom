@@ -1,11 +1,11 @@
 /*!
-	Zoom v1.7.8 - 2013-07-30
-	Enlarge images on click or mouseover.
-	(c) 2013 Jack Moore - http://www.jacklmoore.com/zoom
-	license: http://www.opensource.org/licenses/mit-license.php
+Zoom v1.7.8 - 2013-07-30
+Enlarge images on click or mouseover.
+(c) 2013 Jack Moore - http://www.jacklmoore.com/zoom
+license: http://www.opensource.org/licenses/mit-license.php
 */
 (function ($) {
-	var defaults = {
+    var defaults = {
 		url: false,
 		callback: false,
 		target: false,
@@ -55,14 +55,14 @@
 				offset = $(source).offset();
 			},
 			move: function (e) {
-				var left = (e.pageX - offset.left),
-					top = (e.pageY - offset.top);
+				var right = (e.pageX - offset.right),
+					bottom = (e.pageY - offset.bottom);
 
-				top = Math.max(Math.min(top, outerHeight), 0);
-				left = Math.max(Math.min(left, outerWidth), 0);
+				bottom = Math.max(Math.min(bottom, outerHeight), 0);
+				right = Math.max(Math.min(right, outerWidth), 0);
 
-				img.style.left = (left * -xRatio) + 'px';
-				img.style.top = (top * -yRatio) + 'px';
+				img.style.right = (right * -xRatio) + 'px';
+				img.style.bottom = (bottom * -yRatio) + 'px';
 			}
 		};
 	};
